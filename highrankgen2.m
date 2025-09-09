@@ -1,5 +1,5 @@
 ///////////////////////////////////////////////////////////////////////
-// highrankgen2.m  —  Robust script with logging to highrank.txt
+// highrankgen2.m  —  Logging to highrank.txt
 // For the article:
 //
 //   E : Y^2 = X^3 - s1*X^2 + s2*X - 1

@@ -172,31 +172,25 @@ E_K := BaseChange(E_M, K);
 C_K := ChangeRing(C_M, K);
 J_K := Jacobian(C_K);
 
+// RankBounds is only implemented for Jacobians over the Rationals so cannot run on J_K.
+
 // Report j-invariants (should match j(E_t))
 printf "\n--- j-invariants ---\n";
 printf "j(E/K)     = %o\n", jInvariant(E_K);
 printf "j(E_t)(t0) = %o\n", j0;
 assert jInvariant(E_K) eq j0;
 
-// (L) Rank bounds (may be heavy; wrapped)
-printf "\n=== Rank bounds over K (with GRH class-group bounds) ===\n";
-try
-    t0 := Cputime();
-    lbE, ubE := RankBounds(E_K);
-    t1 := Cputime(t0);
-    printf "RankBounds(E_K) : [%o, %o]   [CPU time: %o seconds]\n", lbE, ubE, t1;
-catch e
-    printf "RankBounds(E_K) failed with message:\n%o\n", e`Object;
-end try;
+// (L) Optional Rank bounds (may be heavy; wrapped)
+// printf "\n=== Rank bounds over K (with GRH class-group bounds) ===\n";
+// try
+//    t0 := Cputime();
+//    lbE, ubE := RankBounds(E_K);
+//    t1 := Cputime(t0);
+//    printf "RankBounds(E_K) : [%o, %o]   [CPU time: %o seconds]\n", lbE, ubE, t1;
+//catch e
+//    printf "RankBounds(E_K) failed with message:\n%o\n", e`Object;
+//end try;
 
-try
-    t0 := Cputime();
-    lbJ, ubJ := RankBounds(J_K);
-    t1 := Cputime(t0);
-    printf "RankBounds(J_K) : [%o, %o]   [CPU time: %o seconds]\n", lbJ, ubJ, t1;
-catch e
-    printf "RankBounds(J_K) failed with message:\n%o\n", e`Object;
-end try;
 
 // (M) Field summary and exit
 printf "\n=== Field summary ===\n";

@@ -23,7 +23,7 @@ PRQ<x> := PolynomialRing(Q);
 printf "==== highrankgen2.m started ====\n";
 printf "Timestamp (Magma) : %o\n\n", Cputime();
 
-// (B) Helpers: absolute discriminant & absolute degree to Q (robust)
+// (B) Helpers: absolute discriminant & absolute degree to Q
 function AbsDiscAndDeg(F)
     if Type(F) eq FldRat then
         return Integers()!1, 1;
@@ -42,7 +42,7 @@ procedure PrintFieldInfo(label, F)
     printf "%o: [abs deg = %o], abs discriminant = %o\n", label, n, D;
 end procedure;
 
-// (C) Robust square-root adjunction over number fields
+// (C) Square-root adjunction over number fields
 function AdjoinSqrt(F, a)
 // Returns (M, r) with M/F quadratic or equal to F, and r in M satisfying r^2 = a.
     if a eq 0 then

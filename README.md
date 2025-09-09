@@ -4,10 +4,10 @@ Magma scripts for producing infinite families of high-rank hyperelliptic curves.
 
 ## Overview
 
-This repository contains a Magma script that generates genus 2 hyperelliptic curves over Q whose Jacobians achieve high Mordell–Weil rank after a small-degree base change. In particular, the script produces examples where, after base change to a number field K with [K:Q] ≤ 8, the Jacobian has rank at least 30.
+This repository contains a Magma script that generates genus 2 hyperelliptic curves over an extension M of degree up to 4 over Q, whose Jacobians achieve high Mordell–Weil rank after an additional degree 2 base change. In particular, the script produces examples where, after base change to a number field K with [K:Q] ≤ 8, the Jacobian has rank at least 30.
 
 - Curves: genus 2 hyperelliptic curves C/M, where M is an extension of degree up to 4 of Q. 
-- Guarantee: exhibits independent points on Jac(C)(K) to give a lower bound rank(Jac(C)/K) ≥ 30 for some number field K with degree ≤ 8 over Q.
+- Guarantee: A lower bound rank(Jac(C)/K) ≥ 30 for some number field K with degree ≤ 8 over Q.
 - Note: The rank over M may be smaller; the claim concerns the rank after base change to K.
 
 ## Requirements
@@ -31,12 +31,12 @@ The script reports, for each example it finds:
 
 - A genus 2 curve C given by an equation y^2 = f(x) with f ∈ M[x].
 - A number field K/Q with [K:M] <= 2 and [K:Q] ≤ 8 used for the base change.
-- A call to the function RankBoudnds(J).
+- Optional: One can call to the function RankBoudnds(E_K) for an elliptic curve such that J_K is isogenous to E_K^2. This computation will be very expensive.
 
 
 ## Caveats
 
-- High-rank searches are computationally demanding and can take significant time and memory.
+- High-rank searches are computationally demanding and can take significant time and memory. One can find lower-bounds on Rank(J) by exhibiting points on C.
 - The guaranteed lower bound concerns rank over K with [K:Q] ≤ 8, not necessarily over the definition field M.
 - Some verification steps (e.g., calling the RankBounds function) can be expensive; you may disable or enable them depending on your needs and resources.
 

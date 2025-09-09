@@ -1,6 +1,6 @@
 ///////////////////////////////////////////////////////////////////////
 // highrankgen2.m  —  Robust script with logging to highrank.txt
-// Model per your article:
+// For the article:
 //
 //   E : Y^2 = X^3 - s1*X^2 + s2*X - 1
 //   C : Y^2 = X^6 - s1*X^4 + s2*X^2 - 1

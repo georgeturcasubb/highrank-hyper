@@ -10,8 +10,6 @@
 //   E_t : y^2 = x^3 + (2U) x + (4 t^2 V)
 //   U = t^8 + 14 t^4 + 1,   V = t^8 + 6 t^4 + 1
 ///////////////////////////////////////////////////////////////////////
-
-// ---- Send everything to highrank.txt right away
 SetOutputFile("highrank.txt");
 
 // (A) Global settings

@@ -32,18 +32,13 @@ The script reports, for each example it finds:
 - A genus 2 curve C given by an equation y^2 = f(x) with f ∈ M[x].
 - A number field K/Q with [K:M] <= 2 and [K:Q] ≤ 8 used for the base change.
 - A call to the function RankBoudnds(J).
-- Additional diagnostics that may include height pairings, independence checks, or saturation information (depending on how the script is configured).
 
-## Reproducibility
-
-- If the search involves randomness, the script may allow setting a seed to reproduce results. Check the top of the script for a parameter like `SetSeed(...)` or a similar option.
-- Deterministic reconstructions of specific examples can typically be rerun by loading the script and invoking the function that prints/constructs stored examples.
 
 ## Caveats
 
 - High-rank searches are computationally demanding and can take significant time and memory.
-- The guaranteed lower bound concerns rank over K with [K:Q] ≤ 8, not necessarily over Q.
-- Some verification steps (e.g., height pairing or saturation) can be expensive; you may disable or enable them depending on your needs and resources.
+- The guaranteed lower bound concerns rank over K with [K:Q] ≤ 8, not necessarily over the definition field M.
+- Some verification steps (e.g., calling the RankBounds function) can be expensive; you may disable or enable them depending on your needs and resources.
 
 ## Citation
 
@@ -51,4 +46,4 @@ If you use or build on these examples in academic work, please cite this reposit
 
 ## Acknowledgments
 
-Thanks to the developers of Magma and the community working on high-rank Jacobians and hyperelliptic curves, whose techniques inspire and inform this search.
+Thanks to the developers of Magma. 
